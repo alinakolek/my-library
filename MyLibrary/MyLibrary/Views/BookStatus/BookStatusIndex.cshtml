@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MyLibrary.DBContext.BookStatus>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(7){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>BookStatus</h4>
+<p>
+    @Html.ActionLink("Create New", "BookStatusCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoverType.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edition.PublicationPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileExtension.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language.PublicationLanguage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Forename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAvailable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsMissing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "BookStatusEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CoverType.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edition.PublicationPlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileExtension.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language.PublicationLanguage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Forename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsAvailable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsMissing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+
+    </tr>
+}
+
+</table>

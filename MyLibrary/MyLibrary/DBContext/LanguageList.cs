@@ -7,7 +7,8 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class LanguageList
+    [MetadataType(typeof(LanguageListMetadata))]
+    public partial class LanguageList
     {
         public LanguageList()
         {

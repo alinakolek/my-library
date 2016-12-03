@@ -170,8 +170,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\BookStatusController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CoverTypeController.cs" />
+    <Compile Include="Controllers\DescriptionController.cs" />
+    <Compile Include="Controllers\EditionController.cs" />
+    <Compile Include="Controllers\FileExtensionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ISBNController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\LanguageListController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PublishingHouseController.cs" />
+    <Compile Include="Controllers\TagController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DBContext\Author.cs" />
     <Compile Include="DBContext\Book.cs" />
     <Compile Include="DBContext\BookStatus.cs" />
@@ -190,9 +204,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612012045259_FirstMigration.cs" />
+    <Compile Include="Migrations\201612012045259_FirstMigration.Designer.cs">
+      <DependentUpon>201612012045259_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AuthorMetadata.cs" />
+    <Compile Include="Models\BookMetadata.cs" />
+    <Compile Include="Models\BookStatusMetadata.cs" />
+    <Compile Include="Models\CategoryMetadata.cs" />
+    <Compile Include="Models\CoverTypeMetadata.cs" />
+    <Compile Include="Models\DescriptionMetadata.cs" />
+    <Compile Include="Models\EditionMetadata.cs" />
+    <Compile Include="Models\FileExtensionMetadata.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ISBNMetadata.cs" />
+    <Compile Include="Models\LanguageListMetadata.cs" />
+    <Compile Include="Models\LanguageMetadata.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PublishingHouseMetadata.cs" />
+    <Compile Include="Models\TagMetadata.cs" />
+    <Compile Include="Models\UserMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -251,6 +284,65 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Books\BooksIndex.cshtml" />
+    <Content Include="Views\Books\BooksCreate.cshtml" />
+    <Content Include="Views\Books\BooksEdit.cshtml" />
+    <Content Include="Views\Books\BooksEditForm.cshtml" />
+    <Content Include="Views\BookStatus\BookStatusIndex.cshtml" />
+    <Content Include="Views\BookStatus\BookStatusCreate.cshtml" />
+    <Content Include="Views\BookStatus\BookStatusEdit.cshtml" />
+    <Content Include="Views\BookStatus\BookStatusEditForm.cshtml" />
+    <Content Include="Views\Author\AuthorIndex.cshtml" />
+    <Content Include="Views\Author\AuthorCreate.cshtml" />
+    <Content Include="Views\Author\AuthorEdit.cshtml" />
+    <Content Include="Views\Author\AuthorEditForm.cshtml" />
+    <Content Include="Views\Category\CategoryIndex.cshtml" />
+    <Content Include="Views\Category\CategoryCreate.cshtml" />
+    <Content Include="Views\Category\CategoryEdit.cshtml" />
+    <Content Include="Views\Category\CategoryEditForm.cshtml" />
+    <Content Include="Views\CoverType\CoverTypeIndex.cshtml" />
+    <Content Include="Views\CoverType\CoverTypeCreate.cshtml" />
+    <Content Include="Views\CoverType\CoverTypeEdit.cshtml" />
+    <Content Include="Views\CoverType\CoverTypeEditForm.cshtml" />
+    <Content Include="Views\Description\DescriptionIndex.cshtml" />
+    <Content Include="Views\Description\DescriptionCreate.cshtml" />
+    <Content Include="Views\Description\DescriptionEdit.cshtml" />
+    <Content Include="Views\Description\DescriptionEditForm.cshtml" />
+    <Content Include="Views\Edition\EditionIndex.cshtml" />
+    <Content Include="Views\Edition\EditionCreate.cshtml" />
+    <Content Include="Views\Edition\EditionEdit.cshtml" />
+    <Content Include="Views\Edition\EditionEditForm.cshtml" />
+    <Content Include="Views\FileExtension\FileExtensionIndex.cshtml" />
+    <Content Include="Views\FileExtension\FileExtensionCreate.cshtml" />
+    <Content Include="Views\FileExtension\FileExtensionEdit.cshtml" />
+    <Content Include="Views\FileExtension\FileExtensionEditForm.cshtml" />
+    <Content Include="Views\ISBN\ISBNIndex.cshtml" />
+    <Content Include="Views\ISBN\ISBNCreate.cshtml" />
+    <Content Include="Views\ISBN\ISBNEdit.cshtml" />
+    <Content Include="Views\ISBN\ISBNEditForm.cshtml" />
+    <Content Include="Views\Language\LanguageIndex.cshtml" />
+    <Content Include="Views\Language\LanguageCreate.cshtml" />
+    <Content Include="Views\Language\LanguageEdit.cshtml" />
+    <Content Include="Views\Language\LanguageEditForm.cshtml" />
+    <Content Include="Views\LanguageList\LanguageListIndex.cshtml" />
+    <Content Include="Views\LanguageList\LanguageListCreate.cshtml" />
+    <Content Include="Views\LanguageList\LanguageListEdit.cshtml" />
+    <Content Include="Views\LanguageList\LanguageListEditForm.cshtml" />
+    <Content Include="Views\PublishingHouse\PublishingHouseIndex.cshtml" />
+    <Content Include="Views\PublishingHouse\PublishingHouseCreate.cshtml" />
+    <Content Include="Views\PublishingHouse\PublishingHouseEdit.cshtml" />
+    <Content Include="Views\PublishingHouse\PublishingHouseEditForm.cshtml" />
+    <Content Include="Views\Tag\TagIndex.cshtml" />
+    <Content Include="Views\Tag\TagCreate.cshtml" />
+    <Content Include="Views\Tag\TagEdit.cshtml" />
+    <Content Include="Views\Tag\TagEditForm.cshtml" />
+    <Content Include="Views\User\UserIndex.cshtml" />
+    <Content Include="Views\User\UserCreate.cshtml" />
+    <Content Include="Views\User\UserEdit.cshtml" />
+    <Content Include="Views\User\UserEditForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -262,6 +354,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612012045259_FirstMigration.resx">
+      <DependentUpon>201612012045259_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

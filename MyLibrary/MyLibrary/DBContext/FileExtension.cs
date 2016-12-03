@@ -7,11 +7,12 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class FileExtension
+    [MetadataType(typeof(FileExtensionMetadata))]
+    public partial class FileExtension
     {
         public FileExtension() { }
 
-        [Key]
+        [Key, ForeignKey("BookStatus")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Type { get; set; }

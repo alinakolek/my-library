@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MyLibrary.DBContext.CoverType>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(2){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>CoverType</h4>
+<p>
+    @Html.ActionLink("Create New", "CoverTypeCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookStatus.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsHardback)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "CoverTypeEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookStatus.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsHardback)
+        </td>
+
+    </tr>
+}
+
+</table>

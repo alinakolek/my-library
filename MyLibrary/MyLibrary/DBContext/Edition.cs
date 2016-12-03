@@ -7,14 +7,15 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class Edition
+    [MetadataType(typeof(EditionMetadata))]
+    public partial class Edition
     {
         public Edition()
         {
             PublishingHouses = new List<PublishingHouse>();
         }
 
-        [Key]
+        [Key, ForeignKey("BookStatus")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public DateTime PublicationDate { get; set; }

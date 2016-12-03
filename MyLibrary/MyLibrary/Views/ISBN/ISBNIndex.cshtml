@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MyLibrary.DBContext.ISBN>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(2){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>ISBN</h4>
+<p>
+    @Html.ActionLink("Create New", "ISBNCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edition.PublicationPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBNNumber)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "ISBNEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edition.PublicationPlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBNNumber)
+        </td>
+
+    </tr>
+}
+
+</table>

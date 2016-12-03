@@ -7,11 +7,12 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class Language
+    [MetadataType(typeof(LanguageMetadata))]
+    public partial class Language
     {
         public Language() { }
 
-        [Key]
+        [Key, ForeignKey("BookStatus")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string PublicationLanguage { get; set; }

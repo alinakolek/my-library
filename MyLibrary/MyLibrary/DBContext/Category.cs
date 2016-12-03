@@ -7,11 +7,12 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class Category
+    [MetadataType(typeof(CategoryMetadata))]
+    public partial class Category
     {
         public Category() { }
 
-        [Key]
+        [Key, ForeignKey("Book")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }

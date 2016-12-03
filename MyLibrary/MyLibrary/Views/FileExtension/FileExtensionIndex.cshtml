@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MyLibrary.DBContext.FileExtension>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(2){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>FileExtension</h4>
+<p>
+    @Html.ActionLink("Create New", "FileExtensionCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookStatus.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "FileExtensionEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookStatus.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+
+    </tr>
+}
+
+</table>

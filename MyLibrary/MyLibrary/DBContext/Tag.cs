@@ -7,7 +7,8 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class Tag
+    [MetadataType(typeof(TagMetadata))]
+    public partial class Tag
     {
         public Tag() { }
 

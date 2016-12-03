@@ -7,11 +7,12 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class ISBN
+    [MetadataType(typeof(ISBNMetadata))]
+    public partial class ISBN
     {
         public ISBN() { }
 
-        [Key]
+        [Key, ForeignKey("Edition")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string ISBNNumber { get; set; }

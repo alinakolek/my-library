@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MyLibrary.DBContext.Author>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(2){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>Author</h4>
+<p>
+    @Html.ActionLink("Create New", "AuthorCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Forename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "AuthorEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Forename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+
+    </tr>
+}
+
+</table>

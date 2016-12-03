@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MyLibrary.DBContext.Book>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(6){text-align: right;}
+    td:nth-child(8){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>Books</h4>
+<p>
+    @Html.ActionLink("Create New", "BooksCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description.DescriptionContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookCoverImage)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "BooksEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description.DescriptionContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookCoverImage)
+        </td>
+
+    </tr>
+}
+
+</table>

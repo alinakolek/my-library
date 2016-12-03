@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MyLibrary.DBContext.Edition>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(4){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>Edition</h4>
+<p>
+    @Html.ActionLink("Create New", "EditionCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookStatus.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN.ISBNNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationIssueNumber)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "EditionEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookStatus.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN.ISBNNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationPlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationIssueNumber)
+        </td>
+
+    </tr>
+}
+
+</table>

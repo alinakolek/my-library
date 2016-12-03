@@ -7,11 +7,12 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class User
+    [MetadataType(typeof(UserMetadata))]
+    public partial class User
     {
         public User() { }
 
-        [Key]
+        [Key, ForeignKey("BookStatus")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Forename { get; set; }

@@ -7,11 +7,12 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class CoverType
+    [MetadataType(typeof(CoverTypeMetadata))]
+    public partial class CoverType
     {
         public CoverType() { }
 
-        [Key]
+        [Key, ForeignKey("BookStatus")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public bool IsHardback { get; set; }

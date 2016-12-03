@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MyLibrary.DBContext.Language>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type='text/css'>
+    /*設定 數字靠右*/
+    td:nth-child(3){text-align: right;}
+</style>
+<h2>Index</h2>
+<h4>Language</h4>
+<p>
+    @Html.ActionLink("Create New", "LanguageCreate")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookStatus.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublicationLanguage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginalLanguage)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "LanguageEdit", new { id=item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookStatus.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublicationLanguage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OriginalLanguage)
+        </td>
+
+    </tr>
+}
+
+</table>

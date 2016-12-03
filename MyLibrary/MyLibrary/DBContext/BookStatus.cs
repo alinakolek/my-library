@@ -7,7 +7,8 @@ using System.Web;
 
 namespace MyLibrary.DBContext
 {
-    public class BookStatus
+    [MetadataType(typeof(BookStatusMetadata))]
+    public partial class BookStatus
     {
         public BookStatus() { }
 

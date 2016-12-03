@@ -1,0 +1,12 @@
+﻿@model MyLibrary.DBContext.ISBN
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ISBNNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ISBNNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ISBNNumber,"" , new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
